@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- artifact:start -->
+<title>Contracorrente</title>
+<meta name="description" content="Um cardume que gira para um lado. Você, que vira e nada contra a corrente.">
+<meta name="theme-color" content="#0a0e11">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<!-- artifact:head-end -->
+</head>
+<body>
+<!-- artifact:body-start -->
+<canvas id="sea" aria-label="Um cardume de peixes girando em círculo" role="img"></canvas>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-name">Contracorrente</span>
+    <span class="demo-chip" id="demo-chip" hidden>demonstração · 1 dia = 1 min</span>
+  </div>
+  <div class="top-actions" id="top-actions" hidden>
+    <button class="icon-btn" id="btn-net" type="button" aria-label="Sua rede">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="badge" id="net-badge" hidden>0</span>
+    </button>
+    <button class="icon-btn" id="btn-settings" type="button" aria-label="Ajustes">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h9M17 8h3M4 16h3M11 16h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="15" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="16" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+  </div>
+</header>
+
+<button class="center" id="center" type="button" aria-label="Abrir sua rede">
+  <span class="center-line" id="center-line"></span>
+  <span class="center-count" id="center-count" hidden>
+    <span class="count-num" id="count-num">1</span>
+    <span class="count-cap" id="count-cap">contra a corrente</span>
+  </span>
+</button>
+
+<div class="pill" id="pill" aria-live="polite" hidden>
+  <span class="pill-text" id="pill-text"></span>
+  <span class="pill-meter"><span class="pill-fill" id="pill-fill"></span></span>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<p class="hint" id="hint" hidden></p>
+
+<button class="skip" id="skip" type="button" hidden>Pular abertura</button>
+
+<section class="sheet" id="sheet" aria-hidden="true" inert>
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-body" id="sheet-body"></div>
+</section>
+
+<input type="file" id="import-file" accept="application/json,.json" hidden>
+
+<script src="app.js"></script>
+<!-- artifact:body-end -->
+</body>
+</html>
